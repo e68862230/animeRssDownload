@@ -15,7 +15,7 @@ import json
 import ssl
 import requests
 
-api_Key = '0bd21ef885a43cf4e394ecf49d9c61f8'
+api_Key = ''
 VERIFY_WEBUI_CERTIFICATE=False
 
 class RssInfo(BaseModel):
@@ -36,9 +36,15 @@ async def mainProg(rssInfo:RssInfo):
     print(load_dict['username']+';'+load_dict['password'])
     if username != load_dict['username'] or password != load_dict['password']:
         return {'message': '用户名密码错误'}
+    api_Key=load_dict['api_key']
+    download_path=load_dict['download_path']
     rssUrl=rssInfo.rssUrl
     qbHost=rssInfo.qbPort
     print(rssInfo)
+    # rssUrl='https://bangumi.moe/rss/tags/567bda4eafc701435d468b61+615bb91fd7f73dd4ed5c4403+548ee0ea4ab7379536f56354'
+    # rssUrl='https://bangumi.moe/rss/tags/615bb926d7f73dd4ed5c442b+58a9c1e6f5dc363606ab42ed+55b86e9224180bc3647fea43+548ee2ce4ab7379536f56358'
+    #rssUrl = 'https://bangumi.moe/rss/tags/60de5da206c78696e4d11610+5869a894efe56b1860c8f814'
+    # rssUrl='https://bangumi.moe/rss/tags/56857f57d4d7dbf20b597c52+567bda4eafc701435d468b61'
     try:
         conn = sqlite3.connect('./anime.db')
         cursor = conn.cursor()
@@ -59,7 +65,7 @@ async def mainProg(rssInfo:RssInfo):
         conn.close()
         #qbPort = 'https://home.acglover.store:8081'
         print(qbHost)
-        qbRssAdd(rssUrl,aniSeries, qbHost,aniDict['fanSub']+aniDict['chn'])
+        qbRssAdd(rssUrl,aniSeries, qbHost,aniDict['fanSub']+aniDict['chn'],download_path)
         # animeName='[NC-Raws] 世界頂尖的暗殺者轉生為異世界貴族 - 08 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4].wmv'
         # animeName='[Nekomoe kissaten][180-kimimimi][09][1080p][JPSC].mp4'
         # #animeName='[Nekomoe kissaten&LoliHouse] Sono Bisque Doll wa Koi wo Suru - 01 [WebRip 1080p HEVC-10bit AAC ASSx2].mkv'
@@ -325,7 +331,7 @@ def storeInfo(aniSeries,cursor,conn):
         except:
             print('已存在')
 
-def qbRssAdd(rssUrl,aniSeries,qbPort,fanSubStr):
+def qbRssAdd(rssUrl,aniSeries,qbPort,fanSubStr,download_path):
     qutoIndex=qbPort.rfind(':')
     qb_Url=qbPort[:qutoIndex]
     qb_Port=qbPort[qutoIndex+1:]
@@ -349,7 +355,7 @@ def qbRssAdd(rssUrl,aniSeries,qbPort,fanSubStr):
     print(qb_Url)
     print(str(qb_Port))
     qbt_client.rss_add_feed(rssUrl,aniName+'_'+fanSubStr)
-    qbt_client.rss_set_rule(aniName+'_'+fanSubStr,{'enabled':True,'affectedFeeds':[rssUrl],'savePath':'/downloads/'+aniName+'/Season'+str(thisSeason)+'/'})
+    qbt_client.rss_set_rule(aniName+'_'+fanSubStr,{'enabled':True,'affectedFeeds':[rssUrl],'savePath':download_path+aniName+'/Season'+str(thisSeason)+'/'})
     print('结束了')
 
 # if __name__ == '__main__':
