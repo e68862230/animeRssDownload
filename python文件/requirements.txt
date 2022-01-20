@@ -2,3 +2,4 @@ fastapi==0.71.0
 feedparser==6.0.8
 requests==2.25.0
 uvicorn==0.17.0
+qbittorrent-api==2022.1.27
