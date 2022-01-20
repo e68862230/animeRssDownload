@@ -1,2 +1,3 @@
 # animeRssDownload
-A python script   with Rss link to generate qb Download mission
+支持浏览器右键自动添加动画的RSS链接到QB，并处理下载剧名的一系列文件集合
+
