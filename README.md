@@ -23,10 +23,10 @@ chromeTest里是插件的解压包，如何安装可以百度一下，以后会�
 
 # 接下来为使用教程，以萌番组网站为例
 # 1.设置浏览器选项
-在浏览器的扩展选项中作如下设置，用户名密码填你settings.json里的，然后服务的IP端口对应你fastapi的IP和端口，QB的填你QB的
+在浏览器的扩展选项中作如下设置，用户名密码填你settings.json里的，然后服务的IP端口对应你fastapi的IP和端口，QB的填你QB的<br/>
 ![UW{GF4KQ0F4$QI07PBW508H](https://user-images.githubusercontent.com/24666325/150326519-469a2ee9-1da3-4025-9f9b-ffd67ee65d0b.png)
 # 2.RSS自动下载
-打开萌番组网页，搜索你的番剧，然后在RSS订阅处右击，选择RSS下载到服务器即可
+打开萌番组网页，搜索你的番剧，然后在RSS订阅处右击，选择RSS下载到服务器即可<br/>
 ![image](https://user-images.githubusercontent.com/24666325/150326991-8ff9c101-ac01-4148-86b7-ff389d3feb5f.png)
 
 ## 成功提示
