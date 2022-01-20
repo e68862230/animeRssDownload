@@ -22,8 +22,8 @@ chromeTest里是插件的解压包，如何安装可以百度一下，以后会�
 ## ②更改QB的设置
 点击torrent完成时运行外部环境，然后填写`bash xxxxx/test.sh "%N" "%F"  "%C" "%D"`,其中xxxxx为你的test.sh脚本路径
 
-# 以上设置完成
-
+## 以上设置完成
+<br/><br/>
 # 接下来为使用教程，以萌番组网站为例
 # 1.设置浏览器选项
 在浏览器的扩展选项中作如下设置，用户名密码填你settings.json里的，然后服务的IP端口对应你fastapi的IP和端口，QB的填你QB的<br/>
