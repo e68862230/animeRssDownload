@@ -39,10 +39,6 @@ async def mainProg(rssInfo:RssInfo):
     rssUrl=rssInfo.rssUrl
     qbHost=rssInfo.qbPort
     print(rssInfo)
-    # rssUrl='https://bangumi.moe/rss/tags/567bda4eafc701435d468b61+615bb91fd7f73dd4ed5c4403+548ee0ea4ab7379536f56354'
-    # rssUrl='https://bangumi.moe/rss/tags/615bb926d7f73dd4ed5c442b+58a9c1e6f5dc363606ab42ed+55b86e9224180bc3647fea43+548ee2ce4ab7379536f56358'
-    #rssUrl = 'https://bangumi.moe/rss/tags/60de5da206c78696e4d11610+5869a894efe56b1860c8f814'
-    # rssUrl='https://bangumi.moe/rss/tags/56857f57d4d7dbf20b597c52+567bda4eafc701435d468b61'
     try:
         conn = sqlite3.connect('./anime.db')
         cursor = conn.cursor()
