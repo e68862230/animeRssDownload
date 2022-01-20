@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style>
+	body{font-size: 16px;width: 400px; height: 300px;padding: 10px;font-family: 'Microsoft Yahei'; }
+	#status {color:red;}
+	</style>
+	<title>插件配置页</title>
+</head>
+<body>
+	<h1>配置页</h1>
+	<div>
+		<label>用户名：</label>
+		<label><input type="text" id="username" name="username"/></label>
+	</div>
+	<div>
+		<label>密码：</label>
+		<label><input type="text" id="password" name="password"/></label>
+	</div>
+		<div>
+		<label>服务的IP和端口号：</label>
+		<label><input type="text" id="ipPort" name="ipPort"/></label>
+	</div>
+	</div>
+		<div>
+		<label>QB的IP和端口号：</label>
+		<label><input type="text" id="qbPort" name="qbPort"/></label>
+	</div>
+	<a href="javascript:;" id="save">保存配置</a>
+	<div id="status"></div>
+
+	<script src="options.js"></script>
+</body>
+</html>

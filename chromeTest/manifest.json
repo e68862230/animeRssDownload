@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "RssDownload",
+  "description": "This extension shows a Google Image search result for the current page",
+  "version": "1.0",
+  "permissions": ["contextMenus", "tabs","notifications","storage","http://*/*","https://*/*"],
+  "background":
+  {
+    "scripts":["jquery-3.6.0.min.js","background.js"]
+  },
+  "options_ui":
+ {
+ "page": "options.html",
+ // 添加一些默认的样式，推荐使用
+ "chrome_style": true
+ }
+}
