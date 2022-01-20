@@ -1,4 +1,6 @@
 {
-  "username": "用户名",
-  "password": "密码"
+  "username": "admin",
+  "password": "1@sada223AAADDdd",
+  "api_key": "你tmdb的api_key",
+  "download_path": "/downloads"
 }
