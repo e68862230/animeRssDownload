@@ -36,6 +36,7 @@ async def mainProg(rssInfo:RssInfo):
     print(load_dict['username']+';'+load_dict['password'])
     if username != load_dict['username'] or password != load_dict['password']:
         return {'message': '用户名密码错误'}
+    global api_Key
     api_Key=load_dict['api_key']
     download_path=load_dict['download_path']
     rssUrl=rssInfo.rssUrl
